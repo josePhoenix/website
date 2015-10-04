@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="{{ DEFAULT_LANG }}">
+<head>
+        {% block head %}
+        <title>{% block title %}{{ SITENAME }}{% endblock title %}</title>
+        <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/{{ CSS_FILE }}" />
+        <meta charset="utf-8" />
+        {% if FEED_ALL_ATOM %}
+        <link href="{{ FEED_DOMAIN }}/{{ FEED_ALL_ATOM }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} Full Atom Feed" />
+        {% endif %}
+        {% if FEED_ALL_RSS %}
+        <link href="{{ FEED_DOMAIN }}/{{ FEED_ALL_RSS }}" type="application/rss+xml" rel="alternate" title="{{ SITENAME }} Full RSS Feed" />
+        {% endif %}
+        {% if FEED_ATOM %}
+        <link href="{{ FEED_DOMAIN }}/{{ FEED_ATOM }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} Atom Feed" />
+        {% endif %}
+        {% if FEED_RSS %}
+        <link href="{{ FEED_DOMAIN }}/{{ FEED_RSS }}" type="application/rss+xml" rel="alternate" title="{{ SITENAME }} RSS Feed" />
+        {% endif %}
+        {% if CATEGORY_FEED_ATOM and category %}
+        <link href="{{ FEED_DOMAIN }}/{{ CATEGORY_FEED_ATOM|format(category.slug) }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} Categories Atom Feed" />
+        {% endif %}
+        {% if CATEGORY_FEED_RSS and category %}
+        <link href="{{ FEED_DOMAIN }}/{{ CATEGORY_FEED_RSS|format(category.slug) }}" type="application/rss+xml" rel="alternate" title="{{ SITENAME }} Categories RSS Feed" />
+        {% endif %}
+        {% if TAG_FEED_ATOM and tag %}
+        <link href="{{ FEED_DOMAIN }}/{{ TAG_FEED_ATOM|format(tag.slug) }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} Tags Atom Feed" />
+        {% endif %}
+        {% if TAG_FEED_RSS and tag %}
+        <link href="{{ FEED_DOMAIN }}/{{ TAG_FEED_RSS|format(tag.slug) }}" type="application/rss+xml" rel="alternate" title="{{ SITENAME }} Tags RSS Feed" />
+        {% endif %}
+        {% endblock head %}
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="{{ SITEURL }}/">{{ SITENAME }} <strong>{{ SITESUBTITLE }}</strong></a></h1>
+        </header><!-- /#banner -->
+        <nav id="menu"><ul>
+        {% for title, link in MENUITEMS %}
+            <li><a href="{{ link }}">{{ title }}</a></li>
+        {% endfor %}
+        {% if DISPLAY_PAGES_ON_MENU %}
+          {% for p in pages %}
+            <li{% if p == page %} class="active"{% endif %}><a href="{{ SITEURL }}/{{ p.url }}">{{ p.title }}</a></li>
+          {% endfor %}
+        {% else %}
+          {% if DISPLAY_CATEGORIES_ON_MENU %}
+            {% for cat, null in categories %}
+              <li{% if cat == category %} class="active"{% endif %}><a href="{{ SITEURL }}/{{ cat.url }}">{{ cat }}</a></li>
+            {% endfor %}
+          {% endif %}
+        {% endif %}
+        </ul></nav><!-- /#menu -->
+        {% block content %}
+        {% endblock %}
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>,
+                which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
+        </footer><!-- /#contentinfo -->
+  <script type="text/javascript">
+    if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+        var align = "center",
+            indent = "0em",
+            linebreak = "false";
+
+        if (false) {
+            align = (screen.width < 768) ? "left" : align;
+            indent = (screen.width < 768) ? "0em" : indent;
+            linebreak = (screen.width < 768) ? 'true' : linebreak;
+        }
+
+        var mathjaxscript = document.createElement('script');
+        var location_protocol = (false) ? 'https' : document.location.protocol;
+        if (location_protocol !== 'http' && location_protocol !== 'https') location_protocol = 'https:';
+        mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+        mathjaxscript.type = 'text/javascript';
+        mathjaxscript.src = location_protocol + '//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+        mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+            "MathJax.Hub.Config({" +
+            "    config: ['MMLorHTML.js']," +
+            "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+            "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+            "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+            "    displayAlign: '"+ align +"'," +
+            "    displayIndent: '"+ indent +"'," +
+            "    showMathMenu: true," +
+            "    messageStyle: 'normal'," +
+            "    tex2jax: { " +
+            "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+            "        displayMath: [ ['$$','$$'] ]," +
+            "        processEscapes: true," +
+            "        preview: 'TeX'," +
+            "    }, " +
+            "    'HTML-CSS': { " +
+            "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+            "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+            "    }, " +
+            "}); " +
+            "if ('default' !== 'default') {" +
+                "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                    "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                    "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                    "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                    "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                    "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+                "});" +
+                "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                    "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                    "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                    "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                    "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                    "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+                "});" +
+            "}";
+        (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+    }
+  </script>
+</body>
+</html>
