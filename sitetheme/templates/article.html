@@ -12,33 +12,25 @@
 {% endblock %}
 
 {% block content %}
-<section id="content" class="body">
-  <header>
-    <h2 class="entry-title">
-      <a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark"
-         title="Permalink to {{ article.title|striptags }}">{{ article.title }}</a></h2>
- {% import 'translations.html' as translations with context %}
- {{ translations.translations_for(article) }}
-  </header>
-  <footer class="post-info">
-    <abbr class="published" title="{{ article.date.isoformat() }}">
-      {{ article.locale_date }}
-    </abbr>
-	{% if article.modified %}
-    <abbr class="modified" title="{{ article.modified.isoformat() }}">
-      {{ article.locale_modified }}
-    </abbr>
-	{% endif %}
-    {% if article.authors %}
-    <address class="vcard author">
-      By {% for author in article.authors %}
+<header id="post-header" class="block">
+  <div class="headings">
+    <h1 id="post-title"><a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark"
+         title="Permalink to {{ article.title|striptags }}">{{ article.title }}</a></h1>
+    <h2 id="post-date">
+      <time datetime="{{ article.date.strftime('%F') }}">{{ article.date.strftime('%B %d, %Y') }}</time>
+      {% if article.modified %}(Updated: <time datetime="{{ article.modified.strftime('%F') }}">{{ article.modified.strftime('%B %d, %Y') }}</time>){% endif %}
+    </h2>
+    {% import 'translations.html' as translations with context %}
+    {{ translations.translations_for(article) }}
+  </div>
+</header>
+<div class="block short" id="author">
+  <div>by {% for author in article.authors %}
           <a class="url fn" href="{{ SITEURL }}/{{ author.url }}">{{ author }}</a>
         {% endfor %}
-    </address>
-    {% endif %}
-  </footer><!-- /.post-info -->
-  <div class="entry-content">
+  </div>
+</div>
+<article id="post-body" class="block">
     {{ article.content }}
-  </div><!-- /.entry-content -->
-</section>
+</article>
 {% endblock %}

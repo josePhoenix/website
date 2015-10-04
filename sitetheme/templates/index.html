@@ -1,28 +1,28 @@
 {% extends "base.html" %}
 {% block content %}
-<section id="content">
-{% block content_title %}
-<h2>All articles</h2>
-{% endblock %}
-
-<ol id="post-list">
-{% for article in articles_page.object_list %}
-        <li><article class="hentry">
-                <header> <h2 class="entry-title"><a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title|striptags }}">{{ article.title }}</a></h2> </header>
-                <footer class="post-info">
-                    <abbr class="published" title="{{ article.date.isoformat() }}"> {{ article.locale_date }} </abbr>
-                    <address class="vcard author">By
-                    {% for author in article.authors %}
-                        <a class="url fn" href="{{ SITEURL }}/{{ author.url }}">{{ author }}</a>
-                    {% endfor %}
-                    </address>
-                </footer><!-- /.post-info -->
-                <div class="entry-content"> {{ article.summary }} </div><!-- /.entry-content -->
-        </article></li>
-{% endfor %}
-</ol><!-- /#posts-list -->
+  <figure class="block" id="headshot">
+      <div><!-- Portrait by Jing Jin --></div>
+  </figure>
+  <header id="main" class="block tall">
+    <div class="headings">
+      <h1>Joseph Long</h1>
+      <h2>Astronomy, computing, and design.</h2>
+    </div>
+  </header>
+  <section id="writing" class="block">
+    <ol>
+    {% for article in articles_page.object_list %}
+      <li class="post">
+        <h3><a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title|striptags }}">{{ article.title }}</a></h3>
+        <p class="published"><time datetime="{{ article.date.strftime('%F') }}">{{ article.date.strftime('%B %d, %Y') }}</time></p>
+        <p class="excerpt">
+          {{ article.summary }}
+        </p>
+      </li>
+    {% endfor %}
+    </ol>
+</section>
 {% if articles_page.has_other_pages() %}
     {% include 'pagination.html' %}
 {% endif %}
-</section><!-- /#content -->
 {% endblock content %}

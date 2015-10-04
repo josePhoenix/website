@@ -7,10 +7,14 @@ SITENAME = 'Joseph Long'
 SITEURL = ''
 
 PATH = 'content'
+PAGE_PATHS = ['pages']
+ARTICLE_PATHS = ['articles']
+STATIC_PATHS = ['articles']
 PLUGIN_PATHS = ['pelican-plugins']
 PLUGINS = ['render_math']
 MATH_JAX = {
     'auto_insert': False,
+    'math_tag_class': 'tex2jax_process',
 }
 
 TIMEZONE = 'America/New_York'

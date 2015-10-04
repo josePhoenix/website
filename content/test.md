@@ -5,3 +5,7 @@ Category: Review
 Following is a review of my favorite mechanical keyboard.
 
 $foo = bar$ update content and save
+
+```java
+public static final int answer = 42;
+```
