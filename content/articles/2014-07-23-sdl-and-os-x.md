@@ -1,7 +1,5 @@
----
-title: "SDL 2 on OS X Mavericks"
-excerpt: "Setting up Xcode 5.1 for development with SDL 2, then getting a test program to compile and run"
----
+Title: SDL 2 on OS X Mavericks
+Summary: Setting up Xcode 5.1 for development with SDL 2, then getting a test program to compile and run
 
 Many, many moons ago (when I was a wee middle-schooler), SDL was the easy way to do anything with graphics cross-platform. Perhaps that's an exaggeration, but as a nerdy child trying to show things developed on Linux to (slightly less) nerdy children that used Windows, I ended up using SDL.
 

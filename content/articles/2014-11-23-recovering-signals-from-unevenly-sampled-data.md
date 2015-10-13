@@ -1,7 +1,5 @@
----
-title: Recovering Signals from Unevenly Sampled Data
-excerpt: "Time-series data collected by astronomers typically has irregular gaps, usually because of ground conditions (like sunrise) getting in the way. The Lomb-Scargle algorithm allows observers to tease out periodicities in their data, even when it has gaps that would introduce noise in a Fourier transform-based approach."
----
+Title: Recovering Signals from Unevenly Sampled Data
+Summary: Time-series data collected by astronomers typically has irregular gaps, usually because of ground conditions (like sunrise) getting in the way. The Lomb-Scargle algorithm allows observers to tease out periodicities in their data, even when it has gaps that would introduce noise in a Fourier transform-based approach.
 
 In this post, we will reconstruct a time-varying signal that we can't measure at
 consistent intervals. A lot of the tools in time-domain signal analysis are
@@ -112,7 +110,7 @@ plt.xlabel('Time (days)')
 plt.ylabel('Signal Value')
 ```
 
-![png](LombScargleDemo_6_1.png)
+![png]({attach}2014-11-23-recovering-signals-from-unevenly-sampled-data/LombScargleDemo_6_1.png)
 
 
 # A moth-eaten sine wave
@@ -146,7 +144,7 @@ plt.ylabel('Signal Value')
 plt.legend()
 ```
 
-![png](LombScargleDemo_9_1.png)
+![png]({attach}2014-11-23-recovering-signals-from-unevenly-sampled-data/LombScargleDemo_9_1.png)
 
 
 This perhaps makes it a bit too easy to see the underlying sine wave. If you
@@ -163,7 +161,7 @@ plt.ylabel('Signal Value')
 plt.ylim(-4, 4)
 ```
 
-![png](LombScargleDemo_11_1.png)
+![png]({attach}2014-11-23-recovering-signals-from-unevenly-sampled-data/LombScargleDemo_11_1.png)
 
 
 Perhaps you can guess that there's some periodicity there by looking, but it's
@@ -230,7 +228,7 @@ plt.xticks(day_ticks, day_labels)
 plt.tight_layout()
 ```
 
-![png](LombScargleDemo_18_0.png)
+![png]({attach}2014-11-23-recovering-signals-from-unevenly-sampled-data/LombScargleDemo_18_0.png)
 
 # Visualizing the detected period
 
@@ -271,7 +269,7 @@ ax2.set_xlabel('Phase $\phi$ (radians)')
 ax2.set_ylabel('Signal Value')
 ```
 
-![png](LombScargleDemo_22_1.png)
+![png]({attach}2014-11-23-recovering-signals-from-unevenly-sampled-data/LombScargleDemo_22_1.png)
 
 How pretty! Much easier to interpret than that sparsely populated graph of a
 moth-eaten sine wave.

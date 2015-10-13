@@ -1,8 +1,6 @@
----
-title: Focusing a Telescope with Fancy Guessing
-excerpt: "The James Webb Space Telescope, like Hubble, will rely on indirect sensing to determine the characteristics of the optical path for focusing. The core of the process is based on the Gerchberg-Saxton algorithm, a remarkably simple way to use Fourier optics principles to recover phase information."
-draft: true
----
+Title: Focusing a Telescope with Fancy Guessing
+Summary: "The James Webb Space Telescope, like Hubble, will rely on indirect sensing to determine the characteristics of the optical path for focusing. The core of the process is based on the Gerchberg-Saxton algorithm, a remarkably simple way to use Fourier optics principles to recover phase information."
+Status: draft
 
 # Heading level 1
 

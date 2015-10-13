@@ -15,9 +15,9 @@
       <li class="post">
         <h3><a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title|striptags }}">{{ article.title }}</a></h3>
         <p class="published"><time datetime="{{ article.date.strftime('%F') }}">{{ article.date.strftime('%B %d, %Y') }}</time></p>
-        <p class="excerpt">
+        <div class="excerpt">
           {{ article.summary }}
-        </p>
+        </div>
       </li>
     {% endfor %}
     </ol>

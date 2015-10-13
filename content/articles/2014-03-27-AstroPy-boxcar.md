@@ -1,6 +1,7 @@
 Title: Boxcar smoothing with AstroPy
 Date: 2014-03-27
-Description: "Smooth a noisy signal by convolving it with a 'boxcar' kernel (or: the poor man's low-pass filter)"
+Slug: AstroPy-boxcar
+Summary: Smooth a noisy signal by convolving it with a 'boxcar' kernel (or: the poor man's low-pass filter)
 
 # Introduction
 
