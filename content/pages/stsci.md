@@ -78,7 +78,7 @@ li.level3:before {
 </style>
 <header id="main" class="block tall">
   <div class="headings">
-    <div class="headshot"><!-- Portrait by Jing Jin --></div>
+    <div class="headshot stsci"></div>
     <h1>Joseph Long</h1>
     <h2>Research &amp; Instrument Analyst at STScI</h2>
   </div>

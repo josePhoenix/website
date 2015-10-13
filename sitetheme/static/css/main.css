@@ -53,24 +53,19 @@ h1, h2 {
 
 /* @group Headshot */
 
-#headshot div {
-	margin: 0 auto;
-}
-#headshot div, .headshot {
+.headshot {
 	display: block;
 	width: 180px;
 	height: 180px;
 	border-radius: 90px;
-	/*box-shadow: 0px 0px 10px #444 inset;*/
-/*  border: 2px dashed black;*/
   border: 1px solid;
 	background: #efedeb url(headshot.png) no-repeat center top;
-}
-.headshot {
-/*  margin: 1em;*/
   margin-right: 2em;
   margin-top: -45px;
   float: left;
+}
+.headshot.stsci {
+  background-image: url('stsci_headshot.png');
 }
 
 figure#headshot {
