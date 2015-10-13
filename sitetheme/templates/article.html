@@ -15,7 +15,7 @@
 <header id="post-header" class="block">
   <div class="headings">
     <h1 id="post-title"><a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark"
-         title="Permalink to {{ article.title|striptags }}">{{ article.title }}</a></h1>
+         title="Permalink to {{ article.title|striptags|escape }}">{{ article.title|escape }}</a></h1>
     <h2 id="post-date">
       <time datetime="{{ article.date.strftime('%F') }}">{{ article.date.strftime('%B %d, %Y') }}</time>
       {% if article.modified %}(Updated: <time datetime="{{ article.modified.strftime('%F') }}">{{ article.modified.strftime('%B %d, %Y') }}</time>){% endif %}
@@ -25,10 +25,7 @@
   </div>
 </header>
 <div class="block short" id="author">
-  <div>by {% for author in article.authors %}
-          <a class="url fn" href="{{ SITEURL }}/{{ author.url }}">{{ author }}</a>
-        {% endfor %}
-  </div>
+  <div>by <a href="{{ SITEURL }}/">Joseph Long</a></div>
 </div>
 <article id="post-body" class="block">
     {{ article.content }}
