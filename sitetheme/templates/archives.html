@@ -1,11 +1,23 @@
 {% extends "base.html" %}
+{% block title %}Writing Archive &ndash; Joseph Long{% endblock %}
 {% block content %}
-<h1>Archives for {{ SITENAME }}</h1>
-
-<dl>
-{% for article in dates %}
-    <dt>{{ article.locale_date }}</dt>
-    <dd><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></dd>
-{% endfor %}
-</dl>
+<header id="post-header" class="block">
+  <div class="headings">
+    <h1 id="post-title">Writing Archive</h1>
+  </div>
+</header>
+<section class="block" id="writing">
+  <ol class="archive">
+    {% for article in dates %}
+        <li class="post">
+          <h3><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></h3>
+          <h4><time datetime="{{ article.date.strftime('%F') }}">{{ article.date.strftime('%B %d, %Y') }}</time></h4>
+          <p class="excerpt">
+            {{ article.summary }}
+          </p>
+        </li>
+    {% endfor %}
+  </ol>
+  <div id="back"><a href="{{ SITEURL }}/">&larr; go back</a></div>
+</section>
 {% endblock %}

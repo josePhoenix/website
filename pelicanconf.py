@@ -36,6 +36,7 @@ DRAFT_URL = 'drafts/{slug}/index.html'
 DRAFT_SAVE_AS = 'drafts/{slug}/index.html'
 PAGE_URL = '{slug}'
 PAGE_SAVE_AS = '{slug}/index.html'
+ARCHIVES_SAVE_AS = 'writing/index.html'
 
 AUTHOR_SAVE_AS = ''
 TAG_SAVE_AS = ''
