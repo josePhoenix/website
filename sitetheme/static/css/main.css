@@ -550,12 +550,6 @@ aside#project-gallery li img {
 
 body {
 	background-color: #000;
-/*  background-image: url(orion_nebula.jpg), url(orion_nebula.jpg);
-  background-attachment: scroll;
-  background-repeat: no-repeat, no-repeat;
-  background-size: 100%;
-  background-position: center -5%, center bottom;
-*/
 	padding-bottom: 15em;
   background-image: url(carina_nebula.jpg);
   background-size: cover;
@@ -566,8 +560,12 @@ body {
 /* @group Header */
 
 .headshot {
-  width: 25%;
-  border-radius: 0;
+  width: 90px;
+  height: 90px;
+  margin-top: 0px;
+  background-position: center center;
+  background-size: auto 120%;
+  margin-right: 1em;
 }
 
 header#main .headings {

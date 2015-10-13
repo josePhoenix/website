@@ -3,19 +3,14 @@ Slug: stsci
 HTML: true
 
 <style type="text/css">
-#stsci-headshot {
-    float: left;
-    width: 7em;
-    margin: 1em;
-}
 .headings h1, .headings h2 {
     text-align: left;
 }
+.status ul li {
+    margin: 0.75em 0;
+}
 #post-header .headings h1#post-title {
     margin-top: 0.75em;
-}
-.headings {
-    overflow: hidden;
 }
 #skills {
     font-size: 0.85em;
@@ -64,6 +59,9 @@ li.level3:before {
     .full-only {
         display: none;
     }
+    .status ul {
+        padding: 1em;
+    }
     #skills td {
         display: block;
     }
@@ -78,20 +76,21 @@ li.level3:before {
 }
 
 </style>
-<header id="post-header" class="block">
+<header id="main" class="block tall">
   <div class="headings">
-    <img src="/css/stsci_headshot.png" alt="Headshot taken at STScI" id="stsci-headshot">
-    <h1 id="post-title">Joseph Long @ STScI</h1>
-    <h2>Research &amp; Instrument Analyst</h2>
+    <div class="headshot"><!-- Portrait by Jing Jin --></div>
+    <h1>Joseph Long</h1>
+    <h2>Research &amp; Instrument Analyst at STScI</h2>
   </div>
 </header>
-<section class="block">
+<section class="block status">
     <h2>What I&rsquo;m doing</h2>
     <ul>
-       <li>Working in the INS/TEL (Telescopes) group on JWST and AFTA/WFIRST</li>
-       <li>Enhancing WebbPSF, Marshall Perrin's Webb point-spread function calculator, with new functionality</li>
-       <li>Enhancing POPPY, the general use Fraunhofer optics simulation package (and companion to WebbPSF)</li>
-       <li>Creating WFIRSTPSF, a tool like WebbPSF for use with the WFIRST mission</li>
+       <li>Working in the INS Telescopes group on JWST and WFIRST-AFTA</li>
+       <li>Working with Harry Ferguson on a project to evaluate galaxy deblending algorithms for LSST using Hubble images and simulation outputs</li>
+       <li>Enhancing <a href="https://pythonhosted.org/webbpsf/" target="_blank">WebbPSF</a>, Marshall Perrin's JWST point-spread function simulator, with new functionality</li>
+       <li>Enhancing <a href="https://pythonhosted.org/poppy/" target="_blank">POPPY</a>, the general use Fraunhofer optics simulation package (and companion to WebbPSF)</li>
+       <li>Creating WebbPSF-WFIRST, a tool like WebbPSF for use with the WFIRST mission</li>
    </ul>
 </section>
 <section class="block">

@@ -30,6 +30,13 @@ TRANSLATION_FEED_ATOM = None
 AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
+ARTICLE_URL = 'writing/{slug}/'
+ARTICLE_SAVE_AS = 'writing/{slug}/index.html'
+DRAFT_URL = 'drafts/{slug}/index.html'
+DRAFT_SAVE_AS = 'drafts/{slug}/index.html'
+PAGE_URL = '{slug}'
+PAGE_SAVE_AS = '{slug}/index.html'
+
 AUTHOR_SAVE_AS = ''
 TAG_SAVE_AS = ''
 CATEGORY_SAVE_AS = ''
