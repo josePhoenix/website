@@ -550,19 +550,24 @@ aside#project-gallery li img {
 
 body {
 	background-color: #000;
-	background-image: url(orion_nebula.jpg), url(orion_nebula.jpg);
-	background-attachment: scroll;
-	background-repeat: no-repeat, no-repeat;
-	background-size: 100%;
-	background-position: center -5%, center bottom;
+/*  background-image: url(orion_nebula.jpg), url(orion_nebula.jpg);
+  background-attachment: scroll;
+  background-repeat: no-repeat, no-repeat;
+  background-size: 100%;
+  background-position: center -5%, center bottom;
+*/
 	padding-bottom: 15em;
+  background-image: url(carina_nebula.jpg);
+  background-size: cover;
+  background-attachment: fixed;
 
 }
 
 /* @group Header */
 
-#headshot {
-	display: none;
+.headshot {
+  width: 25%;
+  border-radius: 0;
 }
 
 header#main .headings {
@@ -614,7 +619,7 @@ nav ol li:after {
 
 /* @end */
 
-#content {
+#content, .container {
 	min-width: 95%;
 	padding: 2.5%;
 	margin: 0;
