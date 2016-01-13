@@ -17,7 +17,7 @@ I've also created printed materials and given some presentations on this functio
 
   * [Simulating the Point-Spread Functions of JWST and WFIRST Instruments]({attach}webbpsf-wfirst-released/webbpsf_slides_aas227_2016.pdf) (contributed talk presented at the AAS 227 meeting, January 2016)
   * [Simulating PSFs for WFIRST-AFTA]({attach}webbpsf-wfirst-released/webbpsf-wfirst_aas227_2016.pdf) (handout distributed by STScI at the AAS 227 meeting, January 2016)
-  * [Overview of STScI Support for WFIRST]({attach}webbpsf-wfirst-released/wfirst_at_stsci_aas227_2016.pdf) (handout distributed by STScI at the AAS 227 meeting, January 2016)
+  * [Overview of STScI Support for WFIRST]({attach}webbpsf-wfirst-released/wfirst_at_stsci_aas227_2016_lowres.pdf) (handout distributed by STScI at the AAS 227 meeting, January 2016)
   * [Simulating WFIRST PSFs across the Wide Field Imager with WebbPSF]({attach}webbpsf-wfirst-released/wfirst_webbpsf_poster_mocking_the_universe_2015.pdf) (poster presented at the Mocking the Universe workshop at STScI, 2015)
 
 *Note: these are the final PDFs as presented or distributed. Certain things (particularly code samples) might have changed in the meantime.*
