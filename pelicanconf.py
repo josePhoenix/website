@@ -11,6 +11,7 @@ PAGE_PATHS = ['pages']
 ARTICLE_PATHS = ['articles']
 STATIC_PATHS = ['articles', 'static']
 PLUGIN_PATHS = ['pelican-plugins']
+TYPOGRIFY = True
 PLUGINS = ['render_math']
 MATH_JAX = {
     'auto_insert': False,
