@@ -98,8 +98,6 @@ header#main .headings h1, header#main .headings h2 {
 header#main .headings, header#post-header .headings {
 	border-top-style: double;
 	border-bottom-style: double;
-	border-top-width: 4px;
-	border-bottom-width: 4px;
 }
 
 header#main .headings h1, header#post-header .headings h1 {
