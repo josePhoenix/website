@@ -11,3 +11,9 @@ pip install -r requirements.txt
 make devserver
 open http://localhost:8000/
 ```
+
+## Publishing
+
+```
+make rsync_upload
+```
