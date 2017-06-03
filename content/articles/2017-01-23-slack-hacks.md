@@ -1,4 +1,7 @@
-# A Quick Hack for Science Slack
+Title: A Quick Hack for Science Slack
+Date: 2017-02-02
+Slug: slack-hacks
+Summary: I was forced to use PHP and cron jobs to monitor servers. Don't do this.
 
 At STScI, there's a small herd of Linux servers that are used by the research staff for a variety of compute-hungry tasks. (They are creatively named `science1`, `science2`, ..., `scienceN`.)
 
@@ -18,7 +21,7 @@ What I decided on was a `/sciencecluster` command that would display the hostnam
 
 # How do you monitor servers when you're not working in the IT division and there's no public monitoring infrastructure?
 
-Through a combination of old-school UNIX and some hacky programming! We have a few NFS network mounts at work, including one that exposes `/grp/webpages/<yourname>` at `http://www.stsci.edu/~<yourname>`. The web server has `mod_php` installed. That was enough to cobble together something that can respond 
+Through a combination of old-school UNIX and some hacky programming! We have a few NFS network mounts at work, including one that exposes `/grp/webpages/<yourname>` at `http://www.stsci.edu/~<yourname>`. The web server has `mod_php` installed. That was enough to cobble together something that can respond to the Slack slash command.
 
 Since I can SSH to our `science*` machines, I can add lines to my `crontab` that run on each machine. I went in to each machine and added (something like) this line to my `crontab`:
 
@@ -68,7 +71,7 @@ In this case, all I had at my disposal was PHP. For all its faults, PHP was "goo
 
 The script itself is based on a [PHP implementation of a Slack command](https://github.com/mccreath/isitup-for-slack/blob/master/isitup.php) I borrowed from David McCreath (@mccreath) on GitHub under the terms of the MIT license.
 
-Rather than go through my line-by-line, I'll just describe how I get the monitoring information. I loop over the files in the same directory as the script with names that match a certain pattern in order to find all the load measurements deposited there by my cronjobs. I parse the load info, date string, and CPU count into an array for each server, then loop over these arrays to find the best average load normalized by CPU count. Finally, I assemble the message that gets displayed and encode it as JSON. The conversion to JSON is necessary for messages that get displayed in-channel. (If you want your slash command to remain between the user and your script, you can just echo out a string in response.)
+Rather than go through my code line-by-line, I'll just describe how I get the monitoring information. I loop over the files in the same directory as the script with names that match a certain pattern in order to find all the load measurements deposited there by my cronjobs. I parse the load info, date string, and CPU count into an array for each server, then loop over these arrays to find the best average load normalized by CPU count. Finally, I assemble the message that gets displayed and encode it as JSON. The conversion to JSON is necessary for messages that get displayed in-channel. (If you want your slash command to remain between the user and your script, you can just echo out a string in response.)
 
 A slightly cleaned-up version of the script is below. I rather dislike PHP, so I reminded myself of *just enough* to get this working. (You have been warned!)
 
@@ -141,6 +144,6 @@ Unless you think server load information is sensitive, I would say yes. There's 
 
 # Is this a good idea?
 
-No! If we had a dashboard for the science cluster, or some visibility into server load that didn't require cobbling together cron jobs, there would be no (or little) need for such a command.
+No! If we had a dashboard for the science cluster, or some visibility into server load that didn't require cobbling together cron jobs, there would be little need for such an integration.
 
 However, in the circumstances, it does provide useful time savings over SSHing to every machine, running `uptime`, and trying to remember how many cores there are.
