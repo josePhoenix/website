@@ -12,6 +12,15 @@ ARTICLE_PATHS = ['articles']
 STATIC_PATHS = ['articles', 'static']
 PLUGIN_PATHS = ['pelican-plugins']
 TYPOGRIFY = True
+MARKDOWN = {
+    'extension_configs': {
+        'markdown.extensions.codehilite': {'css_class': 'highlight'},
+        'markdown.extensions.extra': {},
+        'markdown.extensions.toc': {},
+        'markdown.extensions.meta': {},
+    },
+    'output_format': 'html5',
+}
 PLUGINS = ['render_math']
 MATH_JAX = {
     'auto_insert': False,
